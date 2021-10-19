@@ -105,7 +105,10 @@ function dollarToOther(){
 }
 
 
-function concatArray(arr1, arr2){
+function concatArray(){
+    let arr1 = document.getElementById("arr1").value.split(" ");
+    let arr2 = document.getElementById("arr2").value.split(" ");
+    let out = document.getElementById("arrOp");
     let temp = [];
     arr1.forEach(element => {
         temp.push(element);
@@ -114,30 +117,71 @@ function concatArray(arr1, arr2){
     arr2.forEach(element => {
         temp.push(element);
     });
-    
+    out.innerText = temp;
     return temp;
 }
 
-function alternateConcat(arr1, arr2){
-    let temp = []
-    for(let i=0; i < arr1.length + arr2.length; i++){
+function alternateConcat(){
+    let arr1 = document.getElementById("arr1").value.split(" ");
+    let arr2 = document.getElementById("arr2").value.split(" ");
+    let out = document.getElementById("arrOp");
+    let temp = [];
+    let largeArr = [];
+    let smallLen = 0;
+    let i = 0;
+    console.log(arr1);
+    console.log(arr2);
+
+    if(arr2.length == 1 && arr2[0] == ""){
+        temp = arr1;
+        out.innerText = temp;
+        return temp;
+    }
+    else if(arr1.length == 1 && arr1[0] == ""){
+        temp = arr2;
+        out.innerText = temp;
+        return temp;
+    }
+    else if(arr1.length < arr2.length){
+        smallLen = arr1.length;
+        largeLen = arr2.length;
+        largeArr = arr2;
+    }
+    else if(arr1.length > arr2.length){
+        smallLen = arr2.length;
+        largeLen = arr1.length;
+        largeArr = arr1;
+    }
+    else{
+        smallLen = arr1.length;
+        largeLen = arr1.length;
+    }
+
+    for(i=0; i < smallLen*2; i++){
         if(i%2==0){
             temp.push(arr1[i/2]);
             continue;
         }
         temp.push(arr2[(i-1)/2]);
     }
+    for(let j=i-smallLen; j<largeLen; j++){
+        temp.push(largeArr[j])
+    }
+    out.innerText = temp;
     return temp;
 }
 
 
-function getFiboList(limit){
+function getFiboList(){
+    let limit = parseInt(document.getElementById("num").value);
+    let out = document.getElementById("output");
     fiboList = [];
     fiboList.push(1);
     fiboList.push(1);
     for(let i=2; i<limit; i++){
         fiboList.push(fiboList[i-1] + fiboList[i-2]);
     }
+    out.innerText = fiboList;
     return fiboList;
 }
 

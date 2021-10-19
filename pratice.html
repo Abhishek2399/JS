@@ -32,6 +32,10 @@
         <button id="submit" onclick = "nextLeap()"> Next 20 Leap
         </button>
     </div>
+
+    <div class="Fibo till Entered">
+        <button id="submit" onclick = "getFiboList()"> Get Fibo List </button>
+    </div>
     
     <div class="Rect Print">
         <button id="submit" onclick = "printBox()"> Print Rect </button>
@@ -59,8 +63,23 @@
     </div>
 
 
+    <!-- 8th -->
+    <p>
+        <text> Enter some data with Spaces for Arr1</text>
+        <input id = "arr1" type="text">
+    </p>
+    <p>
+        <text> Enter some data with Spaces for Arr2</text>
+        <input id = "arr2" type="text">
+    </p>
 
+    <button id="concat" onclick="concatArray()"> Concat </button>
+    <button id="alterConcat" onclick="alternateConcat()"> Alternate Concat </button>
 
+    <p>
+        <text class = "output" id="arrOp"> </text>
+    </p>
     
+
 </body>
 </html>
