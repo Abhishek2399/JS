@@ -176,13 +176,18 @@ function getFiboList(){
     let limit = parseInt(document.getElementById("num").value);
     let out = document.getElementById("output");
     fiboList = [];
-    fiboList.push(1);
-    fiboList.push(1);
-    for(let i=2; i<limit; i++){
-        fiboList.push(fiboList[i-1] + fiboList[i-2]);
+    console.log(isNaN(limit));
+    if(!isNaN(limit)){
+        fiboList.push(1);
+        fiboList.push(1);
+        for(let i=2; i<limit; i++){
+            fiboList.push(fiboList[i-1] + fiboList[i-2]);
+        }
+        out.innerText = fiboList;
+        return fiboList;
     }
-    out.innerText = fiboList;
-    return fiboList;
+    out.innerText = "No Limit Entered";
+    
 }
 
 
