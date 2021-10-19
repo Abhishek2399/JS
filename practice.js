@@ -1,5 +1,5 @@
 console.clear();
-function sum(num){
+function sum(){
     let sum = 0;
     // QTS 1.
     sum = (num*(num+1)/2); 
@@ -50,6 +50,7 @@ function getNextLeap(currentYear){
 
 
 function nextLeap(){
+    let out = document.getElementById("output");
     let currentYear = new Date().getFullYear();
     let ans = null;
     let leapYears = [];
@@ -59,24 +60,48 @@ function nextLeap(){
     }
     console.log("---------- < Upcoming 20 Leap Years> -------------")
     console.log(leapYears); 
-    // out.innerText = leapYears;
+    out.innerText = leapYears;
 }
 
 
-function printRect(stringArr){
-    console.log("******************")
+function printBox(){
+    stringArr = ["hi", "this", "is", "abhi"];
+    let rect = document.getElementById("rect");
+    let para = document.createElement("p");
+    para.textContent  += "************";
+    rect.appendChild(para);
     stringArr.forEach(element => {
-        console.log('* ' + element + ' *');
+        let para = document.createElement("p");
+        para.textContent += '* ' + element + ' *';
+        rect.appendChild(para);
     });
-    console.log("******************")
+    let newPara = document.createElement("p");
+    newPara.textContent += "************";
+    rect.appendChild(newPara);
 }
 
 
-function dollarToOther(amount){
-    console.log("a. " + amount*74.28 + " INR");
-    console.log("a. " + amount*109.14 + " Yen");
-    console.log("a. " + amount*0.84 + " Euro");
-    console.log("a. " + amount*0.72 + " Pound sterling");
+function dollarToOther(){
+    console.log("Entered");
+    let amount = parseInt(document.getElementById("amount"));
+    let currencyPrint = document.getElementById("printCurrency");
+
+    let rupee = document.createElement('p');
+    rupee.textContent = "a. " + amount*74.28 + " INR";
+    currencyPrint.appendChild(rupee);
+
+    let yen = document.createElement('p');
+    yen.innerText = "b. " + amount*109.14 + " Yen"
+    currency.appendChild(rupee);
+
+    let euro = document.createElement('p');
+    euro.innerText = "c. " + amount*0.84 + " Euro";
+    currency.appendChild(rupee);
+
+    let pound = document.createElement('p');
+    pound.innerText = "d. " + amount*0.72 + " Pound sterling";
+    currency.appendChild(rupee);
+    
 }
 
 
@@ -115,10 +140,6 @@ function getFiboList(limit){
     }
     return fiboList;
 }
-
-
-
-
 
 
 
