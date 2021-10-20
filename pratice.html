@@ -62,7 +62,6 @@
         
     </div>
 
-
     <!-- 8th -->
     <p>
         <text> Enter some data with Spaces for Arr1</text>
@@ -73,12 +72,53 @@
         <input id = "arr2" type="text">
     </p>
 
-    <button id="concat" onclick="concatArray()"> Concat </button>
-    <button id="alterConcat" onclick="alternateConcat()"> Alternate Concat </button>
+    <p>
+        <button id="concat" onclick="concatArray()"> Concat </button>
+    </p>
+    <p>
+        <button id="alterConcat" onclick="alternateConcat()"> Alternate Concat </button>
+    </p>
+    
+    <!-- 11th -->
+    <p>
+        <text> Enter Random data with spaces in between</text>
+        <input id = "randArr" type="text">
+    </p>
 
+    <button id="revRandom" onclick="RevRandomArr()"> Reverse </button>
+
+    
     <p>
         <text class = "output" id="arrOp"> </text>
     </p>
+    
+    <!-- 12th -->
+    <p> 
+        <text> Enter the Sentence </text>
+        <input id = "sent" type="text">
+    </p>
+
+    <button id="getToken" onclick="LongestToken()"> Get Longest Token </button>
+
+    <p>
+        <text class = "output" id="tokenOp"> </text>
+    </p>
+
+
+    <!-- 12th -->
+    <p> 
+        <text> Enter Elements with spaces </text>
+        <input id = "elements" type="text">
+    </p>
+
+    <button id="getSum" onclick="sumUsingFor()"> For-Loop </button>
+    <button id="getSum" onclick="sumUsingWhile()"> While-Loop </button>
+    <button id="getSum" onclick="sumUsingDoWhile()"> DoWhile-Loop </button>
+
+    <p>
+        <text class = "output" id="sumOp"> </text>
+    </p>
+
     
 
 </body>

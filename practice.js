@@ -164,6 +164,7 @@ function alternateConcat(){
         }
         temp.push(arr2[(i-1)/2]);
     }
+    // i = 7-3;
     for(let j=i-smallLen; j<largeLen; j++){
         temp.push(largeArr[j])
     }
@@ -176,12 +177,14 @@ function getFiboList(){
     let limit = parseInt(document.getElementById("num").value);
     let out = document.getElementById("output");
     fiboList = [];
-    console.log(isNaN(limit));
     if(!isNaN(limit)){
         fiboList.push(1);
-        fiboList.push(1);
-        for(let i=2; i<limit; i++){
-            fiboList.push(fiboList[i-1] + fiboList[i-2]);
+        // 1
+        if(limit > 1){
+            fiboList.push(1);
+            for(let i=2; i<limit; i++){
+                fiboList.push(fiboList[i-1] + fiboList[i-2]);
+            }
         }
         out.innerText = fiboList;
         return fiboList;
@@ -190,14 +193,126 @@ function getFiboList(){
     
 }
 
-
+// 1 1 2 3 5 8
 
 // printRect(["Hello", "World", "in", "a", "frame"])
-dollarToOther(2);
-alpha = ['a', 'b', 'c'];
-num = [1,2,3];
+// dollarToOther(2);
+// alpha = ['a', 'b', 'c'];
+// num = [1,2,3];
 
-combine = concatArray(alpha, num);
-alternate = alternateConcat(alpha, num);
+// combine = concatArray(alpha, num);
+// alternate = alternateConcat(alpha, num);
 
-console.log(getFiboList(5));
+// console.log(getFiboList(5));
+
+
+
+
+
+// 1 2 3 
+// a b c d e
+// {1[0] a[1] 2[2] b[3] 3[4] c[5]}
+//  even odd  even odd  even odd
+// even => a1
+// odd => a2
+// for(int i=0; i<a1+a2; i++){
+//     if(i%2 == 0){
+//         newArr[i] = a1[i/2]; // 0, 2/2 - 1, 4/2 - 2
+//         continue;
+//     }
+//     newArr[i] = a2[(i-1)/2]; // (1-1)/2, (3-1)/2, (5-1)/2
+// }
+
+// 11th
+function RevRandomArr(){
+    let arr = document.getElementById("randArr").value.split(" ");
+    let out = document.getElementById("arrOp");
+    console.log(arr);
+    for(let i=0; i<(arr.length)/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr.length - i -1];
+        arr[arr.length - i - 1] = temp;   
+    }
+    out.innerText = arr;
+}
+
+// 12th 
+function LongestToken()
+{
+    let arr = document.getElementById("sent").value.split("ab");
+    let out = document.getElementById("tokenOp");
+    longest = arr[0];
+    arr.forEach(element => {
+        if(element.length > longest.length && element != 'a' && element != "ab"){
+            longest = element;
+        }
+    });
+    console.log("Longest -> " + longest);
+    out.innerText = "Token : " + longest;
+}
+
+// 13th
+function sumUsingFor(){
+    let arr = document.getElementById("elements").value.split(" ");
+    let out = document.getElementById("sumOp");
+    let sum = 0;
+    for(let i=0; i<arr.length; i++){
+        if(!isNaN(parseInt(arr[index])) && !arr[index].includes("."))
+        {
+            sum += parseInt(arr[index]);
+        }
+        else if(!isNaN(parseInt(arr[index])) && arr[index].includes("."))
+        {
+            sum += parseFloat(arr[index]);
+        }
+    }
+    out.innerText = sum;
+}
+
+function sumUsingWhile(){
+    let arr = document.getElementById("elements").value.split(" ");
+    let out = document.getElementById("sumOp");
+    let sum = 0;
+    let index=0;
+    while(index < arr.length){
+        if(!isNaN(parseInt(arr[index])) && !arr[index].includes("."))
+        {
+            sum += parseInt(arr[index]);
+        }
+        else if(!isNaN(parseInt(arr[index])) && arr[index].includes("."))
+        {
+            sum += parseFloat(arr[index]);
+        }
+        index++;
+    }
+    console.log(sum);
+    out.innerText = sum;
+}
+
+function sumUsingDoWhile(){
+    let arr = document.getElementById("elements").value.split(" ");
+    let out = document.getElementById("sumOp");
+    let sum = 0;
+    let index=0;
+    do{
+        if(!isNaN(parseInt(arr[index])) && !arr[index].includes("."))
+        {
+            sum += parseInt(arr[index]);
+        }
+        else if(!isNaN(parseInt(arr[index])) && arr[index].includes("."))
+        {
+            sum += parseFloat(arr[index]);
+        }
+        index++;
+    }while(index < arr.length);
+    console.log(sum)
+    out.innerText = sum;
+}
+
+sumUsingDoWhile();
+
+// 14th
+
+
+
+
