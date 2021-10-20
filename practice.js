@@ -309,10 +309,49 @@ function sumUsingDoWhile(){
     out.innerText = sum;
 }
 
-sumUsingDoWhile();
+// sumUsingDoWhile();
 
 // 14th
+function multiArrayFuncs(){
+    arr = [1,3,4,5,6,6,78,90];
+    let smallest = arr[0];
+    let biggest = arr[0];
+    let evenCount = 0;
+    let oddCount = 0;
+    let sum = 0;;
+    let avg;
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > biggest){
+            biggest = arr[i];
+        }
+        if(arr[i] < smallest){
+            smallest = arr[i];
+        }
+        if(arr[i] % 2 == 0){
+            evenCount+=1;
+        }
+        else{
+            oddCount+=1;
+        }
+        sum += arr[i];
+    }
+    avg = sum/arr.length;
+    console.log(smallest);
+    console.log(smallest);
 
+    if(evenCount > oddCount){
+        console.log("More even numbers");
+    }
+    else if(oddCount > evenCount){
+        console.log("More odd numbers");
+    }
+    else{
+        console.log("Same even and odd count");
+    }
+    console.log(sum);
+    console.log(avg);
 
+}
+multiArrayFuncs();
 
 
